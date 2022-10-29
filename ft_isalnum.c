@@ -1,4 +1,5 @@
-int isalnum(int c)//ver se é char ou int
+#include "libft.h"
+int isalnum(int c)
 {
     if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
         return 1;

@@ -1,7 +1,6 @@
-#include<stdlib.h>
-
+#include "libft.h"
 //copia o conteudo da src para o dst
-char    *ft_strcpy(char *dest,char *src)
+static char    *ft_strcpy(char *dest,char *src)
 {
     int i;
     while(src[i])

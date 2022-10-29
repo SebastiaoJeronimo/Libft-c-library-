@@ -1,14 +1,4 @@
-int     ft_strlen(char *ptr)
-{
-    int i;
-    i=0;
-    while(ptr[i])
-    {
-        i++;
-    }
-    return (i);
-}
-
+#include "libft.h"
 char    *ft_strrchr(char *str, int c)//ver se e int ou char
 {
     int lenght_str;

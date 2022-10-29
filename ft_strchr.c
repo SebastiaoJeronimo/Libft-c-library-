@@ -1,4 +1,5 @@
-char    *ft_strchr(char *str, int c) //ver se e int ou char
+#include "libft.h"
+char    *ft_strchr(const char *str, int c) //ver se e int ou char
 {
     int i;
 
