@@ -81,4 +81,23 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *));
 #define USERNAME "scosta-j"
 #define SCHOOL 42
 
+/* INTERESTING FUNCTION JUST TO CHECK MEMORY OVERLAPS
+static int overlap_p(char *dest, char *src, size_t n)
+{
+    int i;
+    char *ptr_dest_overlap;
+    char *ptr_src_overlap;
+
+    i = 0;
+    ptr_dest_overlap = &dest[0];
+    ptr_src_overlap =  &src[0];
+    while(i<n)
+    {
+    if (ptr_dest_overlap+i==ptr_src_overlap || ptr_src_overlap+i==ptr_dest_overlap)
+       return (1);
+       i++; 
+    } 
+    return (0);
+}
+*/
 #endif // fim da definicao
