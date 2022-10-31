@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/30 13:52:56 by scosta-j          #+#    #+#             */
+/*   Updated: 2022/10/30 13:57:45 by scosta-j         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 //first check the spaces
 //check if the number is negative
@@ -6,8 +17,8 @@ int ft_atoi(const char *str)
 {
     int i; //index
     int res; //result
-    int signal; //signal 
-
+    int signal; //signal
+    
     signal = 1;
     res = 0;
     i = 0;
