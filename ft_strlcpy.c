@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 13:52:32 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/10/30 18:13:01 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/12 18:19:18 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ it was truncated in the copy or not;
 developers must compare the returned length against n 
 to determine whether truncation has occurred.*/
 //check if both strings are not null
+#include "libft.h"
 size_t  ft_strlcpy(char *dst, const char *src, size_t size)
 {
     int size_src;
