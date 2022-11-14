@@ -6,51 +6,48 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:25:35 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/12 22:48:50 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/14 22:07:26 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-                                   
+
 static int	compute_size(int n)
 {
-	int	i;
+	if (n > 9)
+		return (1 + compute_size(n / 10));
+	return (1);
+}
 
-	i = 0;
-	while (n != 0)
+static void	transform(char *dest, int number, int index_start, int str_size)
+{
+	while (str_size != 0)
 	{
-		n = n / 10;
-		i++;
+		dest[index_start + str_size - 1] = number % 10;
+		number = number / 10;
+		str_size--;
 	}
-	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*ptr;
-	int		size_for_malloc; //guardar signal
-	int		index_for_allocation;
-	int		signal;
+	char *ptr;
+	int index_for_allocation;
+	int signal;
 
 	signal = 0;
 	index_for_allocation = 0;
-	if (n == -2147483648) //Tratar o caso maior
-		return ("-2147483648");
-	size_for_malloc = compute_size(n);
+	if (n == -2147483648) // Tratar o caso maior
+		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
 		signal = 1;
 		n = n * -1;
-		index_for_allocation++;
+		index_for_allocation++; // mais um no index 0
 	}
-	ptr = (char *) malloc ((sizeof(char)*size_for_malloc +1 +index_for_allocation));
-	ptr[size_for_malloc +index_for_allocation -1] = '\0';
-	while ( n != 0) 
-	{
-		ptr [size_for_malloc -1 +index_for_allocation -1] = n%10 +'0';
-		n = n/10;
-	}
-	if (signal != 0)
-		ptr[0] = '-';
-	return ptr
+	ptr = (char *)calloc((compute_size(n) + signal + 1), sizeof(char));
+	if (signal == 1)
+		ptr[0] == '-';
+	transform(ptr, n, index_for_allocation, compute_size(n));
+	return (ptr);
 }

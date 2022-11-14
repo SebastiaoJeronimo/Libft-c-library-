@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:21:25 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/12 21:10:58 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/14 11:52:37 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,18 @@
 //5 
 static int ft_countwords(char *s ,char c)
 {
-    int nwords;
-    int isword;
-    int index;
+    int		nwords;
+    int		isword;
+    int		index;
 
     index = 0;
     isword = 0;
-    while(s[index])
+	nwords = 0;
+    while (s[index])
     {
-        if(s[index] != c && isword == 0)
+        if (s[index] != c && isword == 0)
         {
-            isword = 1;
+        	isword = 1;
             nwords++;
         }
         if(s[index] == c)
@@ -49,7 +50,11 @@ char    **ft_split(char const *s, char c)
     int wordsIndex;
     int countmallocindex;
 
-    wordsIndex , nwords, i, old_i ,countmallocindex  = 0,ft_countwords(s ,c), 0, 0 ,0;
+    wordsIndex = 0;
+	nwords = ft_countwords((char *)s, c);
+	i = 0;
+	old_i = 0;
+	countmallocindex  = 0;
     splitstr = (char **)ft_calloc (sizeof(char *), (nwords+1));
     while(s[i]) //dygeiygfgehf
     {   
