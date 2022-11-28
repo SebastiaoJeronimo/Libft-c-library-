@@ -7,11 +7,11 @@ char * ft_strnstr(const char *big, const char *little, size_t len)
     i = 0;
     size_of_little = ft_strlen(little);
     if (little[i] == '\0')
-        return (big);
+        return (char *) (big);
     while (i < len)
     {
         if(ft_strncmp(&big[i],little, size_of_little) == 0)
-            return (&big[i]);
+            return (char *) (&big[i]);
         i++;
     }
     return (0);

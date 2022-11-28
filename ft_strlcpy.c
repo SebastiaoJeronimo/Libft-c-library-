@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 13:52:32 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/12 18:19:18 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/28 14:21:36 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ to determine whether truncation has occurred.*/
 size_t  ft_strlcpy(char *dst, const char *src, size_t size)
 {
     int size_src;
-    int i;
+    size_t i;
 
     i = 0;
     size_src = ft_strlen(src);

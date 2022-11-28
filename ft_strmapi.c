@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:30:29 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/14 15:27:01 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/28 14:25:13 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[ft_strlen(s)] = '\0';
 	while (i < size_str)
 	{
-		str[i] = (*f)(i, s);
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';

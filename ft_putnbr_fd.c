@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:28:40 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/14 16:02:09 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/28 14:12:54 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	number_size(int number)
 {
 	if (number > 9)
-		return (1 + compute_size(number / 10));
+		return (1 + number_size(number / 10));
 	return (1);
 }
 

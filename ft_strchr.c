@@ -7,7 +7,7 @@ char    *ft_strchr(const char *str, int c) //ver se e int ou char
     while(str[i])
     {
         if(str[i] == c)
-            return &str[i];
+            return (char *) &str[i];
         i++;
     }
     return (0);

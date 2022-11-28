@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:25:35 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/14 22:07:26 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/28 14:07:30 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_itoa(int n)
 	signal = 0;
 	index_for_allocation = 0;
 	if (n == -2147483648) // Tratar o caso maior
-		return (ft_strdup("-2147483648"));
+		return ft_strdup("-2147483648");
 	if (n < 0)
 	{
 		signal = 1;
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 	}
 	ptr = (char *)calloc((compute_size(n) + signal + 1), sizeof(char));
 	if (signal == 1)
-		ptr[0] == '-';
+		ptr[0] = '-';
 	transform(ptr, n, index_for_allocation, compute_size(n));
 	return (ptr);
 }

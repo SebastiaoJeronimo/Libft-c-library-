@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:37:01 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/14 13:47:00 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/28 14:20:53 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 /* libraries and imports needed*/
 #include<stdlib.h>
 #include<stdio.h>
+#include<unistd.h>
 
 /*any typedefs or enums*/
 typedef struct s_list
@@ -71,7 +72,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t n);
 
 //MEMORY MANAGMENT AND ALLOCATION METHODS
 void *ft_calloc(size_t nmemb, size_t size);
-char *strdup(const char *s);
+char *ft_strdup(const char *src); // diferebt
 
 //OTHER CLASSICS
 int ft_atoi(const char *nptr);

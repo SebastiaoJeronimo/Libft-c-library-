@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:27:49 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/07 16:59:26 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/28 14:38:49 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 static int bellongs(char c, char *set)
 {
 	int i;
+
+	i = 0;
 	while (set[i])
 	{
 		if (set[i] == c)
@@ -58,18 +60,20 @@ static int findupperbound(char *s1 , char *set)
 
 	char *ft_strtrim(char const *s1, char const *set)
 {
-	char *str;
-	int upperbound;
-	int lowerbound;
-	int index;
+	char	*str;
+	size_t		upperbound;
+	size_t		lowerbound;
+	int		index;
 
-	lowerbound, upperbound, index = 1, 1, 0;
-	if (!s1 || set == '\0') // excecoes
-		return (s1);
-	lowerbound = findlowerbound(s1, set);
-	if (lowerbound >= ft_strlen(str)) //ver excecao apaga o array todo
+	lowerbound = 1;
+	upperbound = 1;
+	index = 0;
+	if (!s1 || set == NULL) // excecoes
+		return (char *) (s1);
+	lowerbound = findlowerbound((char *)s1, (char *)set);
+	if (lowerbound >= ft_strlen(s1)) //ver excecao apaga o array todo
 		return (0);
-	upperbound = findupperbound(s1, set);
+	upperbound = findupperbound((char *)s1, (char *)set);
 	str = (char *) malloc((1 + lowerbound) + upperbound + 1);
 	while (lowerbound <= upperbound)
 	{

@@ -6,11 +6,11 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:06:09 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/14 13:07:36 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/28 13:59:34 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int isascii(int c)
 {
