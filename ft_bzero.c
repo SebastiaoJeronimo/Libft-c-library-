@@ -6,12 +6,13 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:16:12 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/10/30 22:50:10 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/28 18:21:34 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void ft_bzero(void *s, size_t n)
+
+void	ft_bzero(void *s, size_t n)
 {
 	 ft_memset(s, '\0', n);//dedicated to nuno
 }

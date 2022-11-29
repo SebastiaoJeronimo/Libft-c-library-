@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 14:52:53 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/28 14:52:58 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/28 17:59:32 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int		i;
+	t_list	*temp_lst;
 
 	i = 0;
-	while (lst != NULL)
+	temp_lst = lst;
+	while (temp_lst != NULL)
 	{
-		lst = lst->next;
+		temp_lst = temp_lst->next;
 		i++;
 	}
 	return (i);
