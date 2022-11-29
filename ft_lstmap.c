@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 14:52:46 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/28 22:53:23 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/11/29 00:30:26 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,22 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
 void (*del)(void *))
 {
 	t_list	*lst_final;
-	int		n_nodes;
+	t_list	*possible_final_lst_node;
 
-	n_nodes = ft_lstsize(lst);
-	lst_final = (t_list *) malloc (sizeof(t_list *) * n_nodes);
-	lst_final = lst;
-	f(lst_final);
+	if (lst == NULL)
+		return (NULL);
+	lst_final = 0;
+	while (lst)
+	{
+		possible_final_lst_node = ft_lstnew(f(lst->content));
+		if (!possible_final_lst_node)
+		{
+			ft_lstclear(&possible_final_lst_node, del);
+			return (NULL);
+		}
+		ft_listadd_back(&lst_final, possible_final_lst_node);
+		lst = lst-> next;
+	}
 	return (lst_final);
 }
 
