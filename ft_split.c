@@ -6,74 +6,72 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:21:25 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/14 11:52:37 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/12/05 20:17:06 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//1 contar quantas palvaras existem 
-//2 atribuir ao apontador de apontadores de char quantas unidades de memoria tem (consoante o n de palavras)
-//3 determinar com um index ate aonde e quanto para alocar memoria para cada string e com um index atrasado
-//alocar memoria para esse apontador (nao esquecer do end of line)
-//4 por um /0 no final ver se tem que ser NULL por causa da Francinette para proteger e dar para ver quantas funcoes existem
-//5 
-static int ft_countwords(char *s ,char c)
+static	int	nr_words(char const *s, char c)
 {
-    int		nwords;
-    int		isword;
-    int		index;
+	int		result;
+	int		pos;
+	int		state;
 
-    index = 0;
-    isword = 0;
-	nwords = 0;
-    while (s[index])
-    {
-        if (s[index] != c && isword == 0)
-        {
-        	isword = 1;
-            nwords++;
-        }
-        if(s[index] == c)
-            isword = 0;
-        index++;
-    }
-    return (nwords);
+	result = 0;
+	pos = 0;
+	state = 0;
+	while (s[pos])
+	{
+		if (s[pos] == c)
+			state = 0;
+		else
+		{
+			if (state == 0)
+			{
+				result++;
+				state = 1;
+			}	
+		}
+		pos++;
+	}
+	return (result);
 }
 
-char    **ft_split(char const *s, char c)
+static	int	first_word_length(const char *s, char c)
 {
-    char **splitstr;
-    int i;
-    int old_i;    
-    int nwords;
-    int wordsIndex;
-    int countmallocindex;
+	int		pos;
 
-    wordsIndex = 0;
-	nwords = ft_countwords((char *)s, c);
-	i = 0;
-	old_i = 0;
-	countmallocindex  = 0;
-    splitstr = (char **)ft_calloc (sizeof(char *), (nwords+1));
-    while(s[i]) //dygeiygfgehf
-    {   
-        old_i = i;
-        if(s[i] == c)
-        {
-            old_i++;
-            i++;
-        }
-        else
-        {
-            while(s[i] != c && s[i])
-                i++;
-            splitstr[wordsIndex] = (char *) ft_calloc(sizeof(char *), (i-old_i+1));
-            while( s[old_i] && old_i < i)
-                splitstr[wordsIndex][countmallocindex++] = s[old_i++]; 
-            wordsIndex++;    
-            countmallocindex = 0;
-        }
-    }
-    return (splitstr);
+	pos = 0;
+	while (s[pos] != c && s[pos] != '\0')
+		pos++;
+	return (pos);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+	int		pos;
+	int		pos_res;
+	int		word_size;
+
+	pos = 0;
+	pos_res = 0;
+	result = (char **)ft_calloc(nr_words(s, c) + 1, sizeof(char *));
+	if (result == NULL)
+		return (NULL);
+	while (s[pos])
+	{
+		if (s[pos] == c)
+			pos++;
+		else
+		{
+			word_size = first_word_length(&s[pos], c);
+			result[pos_res] = (char *)ft_calloc(word_size + 1, sizeof(char));
+			ft_strlcpy(result[pos_res], &s[pos], word_size + 1);
+			pos_res++;
+			pos = pos + word_size;
+		}
+	}
+	return (result);
 }

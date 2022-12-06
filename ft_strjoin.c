@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:18:32 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/07 14:26:13 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:20:35 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int strindex;
+	int		i;
+	int		strindex;
+	char	*str;
 
 	i = 0;
 	strindex = 0;
-	char *str  = (char *) malloc(ft_strlen(s1) + ft_strlen(s2) +1 ); //+1 for the '\0'
+	str = (char *) malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
-		return 0;
+		return (0);
 	while (s1[i])
 	{
 		str[strindex] = s1[i];
@@ -35,5 +36,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		strindex++;
 		i++;
 	}
+	str[strindex] = '\0';
 	return (str);
 }

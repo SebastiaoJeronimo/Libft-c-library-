@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 13:52:32 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/28 14:21:36 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/12/05 19:53:07 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,21 @@ developers must compare the returned length against n
 to determine whether truncation has occurred.*/
 //check if both strings are not null
 #include "libft.h"
-size_t  ft_strlcpy(char *dst, const char *src, size_t size)
-{
-    int size_src;
-    size_t i;
 
-    i = 0;
-    size_src = ft_strlen(src);
-    if( size == 0)
-        return (ft_strlen(src));
-    while(i<size-1 && src[i])
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    return (ft_strlen(src));
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	int		size_src;
+	size_t	i;
+
+	i = 0;
+	size_src = ft_strlen(src);
+	if (size == 0)
+		return (ft_strlen(src));
+	while (i < size - 1 && src[i])
+	{
+		dst [i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }

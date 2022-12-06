@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:16:12 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/28 18:21:34 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/12/05 20:35:09 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	 ft_memset(s, '\0', n);//dedicated to nuno
+	ft_memset(s, '\0', n);
 }

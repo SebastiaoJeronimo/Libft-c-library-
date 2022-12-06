@@ -6,27 +6,29 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 21:12:58 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/28 14:42:56 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/12/05 22:15:39 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char buffer[n];
-	//the behaviour of passing a NULL pointer is undifined
-	char *char_dst = (char *) dest;
-    char *char_src = (char *) src;
-	size_t i;
+	char	buffer[n];
+	char	*char_dst;
+	char	*char_src;
+	size_t	i;
 
 	i = 0;
-	while(i < n)
+	char_dst = (char *) dest;
+	char_src = (char *) src;
+	while (i < n)
 	{
 		buffer[i] = char_src[i];
 		i++;
 	}
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
 		char_dst[i] = buffer[i];
 		i++;

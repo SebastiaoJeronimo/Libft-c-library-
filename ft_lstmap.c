@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 14:52:46 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/11/29 00:30:26 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/12/05 21:55:45 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void (*del)(void *))
 			ft_lstclear(&possible_final_lst_node, del);
 			return (NULL);
 		}
-		ft_listadd_back(&lst_final, possible_final_lst_node);
+		ft_lstadd_back(&lst_final, possible_final_lst_node);
 		lst = lst-> next;
 	}
 	return (lst_final);
@@ -41,4 +41,3 @@ void (*del)(void *))
 // aplicar newn->content = f(lst->content)
 // lst = lst->next (fazer o loop)
 //
-
