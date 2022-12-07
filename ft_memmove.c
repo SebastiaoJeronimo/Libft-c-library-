@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 21:12:58 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/12/05 22:15:39 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/12/06 21:19:39 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 0;
 	char_dst = (char *) dest;
 	char_src = (char *) src;
+	if ((char_dst == NULL) || (char_src == NULL))
+		return (NULL);
 	while (i < n)
 	{
 		buffer[i] = char_src[i];

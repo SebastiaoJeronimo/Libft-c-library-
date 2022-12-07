@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 18:11:09 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/12/05 20:26:05 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:30:36 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char_src = (char *) src;
 	char_dst = (char *) dest;
 	i = 0;
+	if (!dest && !src)
+		return (0);
 	while (i < n)
 	{
 	char_dst[i] = char_src[i];

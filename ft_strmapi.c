@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:30:29 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/12/05 19:58:20 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:40:03 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	size_str = ft_strlen(s);
 	str = (char *) malloc(ft_strlen(s) + 1);
+	if (!str)
+		return (0);
 	str[ft_strlen(s)] = '\0';
 	while (i < size_str)
 	{

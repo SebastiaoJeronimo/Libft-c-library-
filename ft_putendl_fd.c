@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:34:52 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/12/05 20:20:09 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:06:52 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, &s, ft_strlen(s));
+	if (!s)
+		return ;
+	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }
