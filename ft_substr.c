@@ -6,12 +6,15 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:11:23 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/12/05 17:58:37 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/12/07 15:55:11 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * if the start is ahead of the lenght no trim
+*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;

@@ -6,7 +6,7 @@
 /*   By: scosta-j <scosta-j@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 21:12:58 by scosta-j          #+#    #+#             */
-/*   Updated: 2022/12/06 21:19:39 by scosta-j         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:26:09 by scosta-j         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,27 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	buffer[n];
-	char	*char_dst;
-	char	*char_src;
 	size_t	i;
 
-	i = 0;
-	char_dst = (char *) dest;
-	char_src = (char *) src;
-	if ((char_dst == NULL) || (char_src == NULL))
+	i = n;
+	if ((dest == NULL) && (src == NULL))
 		return (NULL);
-	while (i < n)
+	if ((src < dest && src + n > dest))
 	{
-		buffer[i] = char_src[i];
-		i++;
+		while (i > 0)
+		{
+			((unsigned char *)dest)[i - 1] = ((unsigned char *)src)[i - 1];
+			i--;
+		}
 	}
-	i = 0;
-	while (i < n)
+	else
 	{
-		char_dst[i] = buffer[i];
-		i++;
+		i = 0;
+		while (i < n)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
 	}
 	return (dest);
 }
